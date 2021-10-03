@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/js/main.js">
+        <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+        <meta name="viewport" content="width=device-width, initial">
+    </head>
+    <body>
+        <div id="main">
+
+            <heading>
+            <div id="nav">
+                    <div class="btn left-btn" >
+                       <a href="#" style="text-decoration: none;"><h1 class="ti-home btn-home" style="line-height:46px;"></h1></a>
+                    </div>
+                    <ul class="nav--title">
+                        <li><a href="#about" class="color-white">Giới thiệu</a></li>
+                        <li><a href="#member" class="color-white">Member</a></li>
+                        <li><a href="#contact" class="color-white">Liên lạc</a></li>
+                        <li style="width: 52px; padding-right: 140px; padding-left: 12px;"><a class="color-white">Khác</a> <ul class="subnav">
+                            <li ><a href="#" style="color: black">Hình ảnh</a></li>
+                            <li ><a href="#train-place"style="color: black">Training Place</a></li>
+                            <li ><a href="#coppyright" style="color: black">Thêm thông tin</a></li>
+                                 </ul>
+                        </li>
+                    </ul>
+                    <div class="btn right-btn" id="search-none">
+                        <h1 class="ti-search btn-search"></h1>
+                    </div>
+                    <div class="mobile--menu--btn">
+                      <div class="container--mobile">
+                        <button id="burger" class="open-main-nav">
+                          <span class="burger"></span>
+                          <span class="burger-text"></span>
+                        </button>
+                        <nav class="main-nav" id="main-nav">
+                          <ul>
+                            <li>
+                              <a href="#about" id="list-mobile">Giới thiệu</a>
+                            </li>
+                            <li>
+                      <a href="#member" id="list-mobile1">Thành viên</a>
+                    </li>
+                    <li>
+                      <a href="#contact" id="list-mobile2">Contact</a>
+                    </li>
+                    <li>
+                      <a href="#train-place" id="list-mobile3">Training Place</a>
+                    </li>
+                    <li>
+                      <a href="#coppyright" id="list-mobile4">Admin</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <script>
+                let burger = document.getElementById('burger'),
+               nav    = document.getElementById('main-nav'),
+               navheight = document.getElementById('nav'),
+               list = document.getElementById('list-mobile');
+               list1 = document.getElementById('list-mobile1');
+               list2 = document.getElementById('list-mobile2');
+               list3 = document.getElementById('list-mobile3');
+               list4 = document.getElementById('list-mobile4');
+               burger.addEventListener('click', function(e){
+                 this.classList.toggle('is-open');
+              nav.classList.toggle('is-open');
+              navheight.classList.toggle('is-open-nav');
+            });
+             
+            /* Onload demo - dirty timeout */
+            let clickEvent = new Event('click');
+            list.addEventListener('click', function(e){
+              burger.dispatchEvent(clickEvent);
+              nav.dispatchEvent(clickEvent);
+            });
+            list1.addEventListener('click', function(e){
+              burger.dispatchEvent(clickEvent);
+              nav.dispatchEvent(clickEvent);
+            });
+            list2.addEventListener('click', function(e){
+              burger.dispatchEvent(clickEvent);
+              nav.dispatchEvent(clickEvent);
+            });
+            list3.addEventListener('click', function(e){
+              burger.dispatchEvent(clickEvent);
+              nav.dispatchEvent(clickEvent);
+            });
+            list4.addEventListener('click', function(e){
+              burger.dispatchEvent(clickEvent);
+              nav.dispatchEvent(clickEvent);
+            });
+            window.addEventListener('load', function(e) {
+              slowmo.dispatchEvent(clickEvent);
+              burger.dispatchEvent(clickEvent);
+              setTimeout(function(){
+                burger.dispatchEvent(clickEvent);
+                setTimeout(function(){
+                  slowmo.dispatchEvent(clickEvent);
+                }, 3500);
+              }, 5500);
+            });
+             </script>
+            </div>
+          </div>
+            </heading>
+            <div id="content">
+              <style>
+                    * {box-sizing: border-box}
+                    
+                    .mySlides {display: none}
+                    img {vertical-align: middle;}
+                    
+                    /* Slideshow container */
+                    .slideshow-container {
+                      max-width: 100%;
+                      position: relative;
+                      margin: auto;
+                    }
+                    
+                    /* Next & previous buttons */
+                    .prev, .next {
+                      cursor: pointer;
+                      position: absolute;
+                      top: 50%;
+                      width: auto;
+                      padding: 16px;
+                      margin-top: -22px;
+                      color: white;
+                      font-weight: bold;
+                      font-size: 18px;
+                      transition: 0.6s ease;
+                      border-radius: 0 3px 3px 0;
+                      user-select: none;
+                    }
+                    
+                    /* Position the "next button" to the right */
+                    .next {
+                      right: 0;
+                      border-radius: 3px 0 0 3px;
+                    }
+                    
+                    /* On hover, add a black background color with a little bit see-through */
+                    .prev:hover, .next:hover {
+                      background-color: rgba(0,0,0,0.8);
+                    }
+                    
+                    /* Caption text */
+                    .text {
+                      color: #f2f2f2;
+                      font-size: 15px;
+                      padding: 8px 12px;
+                      position: absolute;
+                      bottom: 8px;
+                      width: 100%;
+                      text-align: center;
+                    }
+                    
+                    /* Number text (1/3 etc) */
+                    .numbertext {
+                      color: #f2f2f2;
+                      font-size: 12px;
+                      padding: 8px 12px;
+                      position: absolute;
+                      top: 0;
+                    }
+                    
+                    /* The dots/bullets/indicators */
+                    .dot {
+                      cursor: pointer;
+                      height: 15px;
+                      width: 15px;
+                      margin: 0 2px;
+                      background-color: #bbb;
+                      border-radius: 50%;
+                      display: inline-block;
+                      transition: background-color 0.6s ease;
+                    }
+                    
+                    .active, .dot:hover {
+                      background-color: #717171;
+                    }
+                    
+                    /* Fading animation */
+                    .fade {
+                      -webkit-animation-name: fade;
+                      -webkit-animation-duration: 1.5s;
+                      animation-name: fade;
+                      animation-duration: 1.5s;
+                    }
+                    
+                    @-webkit-keyframes fade {
+                      from {opacity: .4} 
+                      to {opacity: 1}
+                    }
+                    
+                    @keyframes fade {
+                      from {opacity: .4} 
+                      to {opacity: 1}
+                    }
+                    
+                    /* On smaller screens, decrease text size */
+                    @media only screen and (max-width: 300px) {
+                      .prev, .next,.text {font-size: 11px}
+                    }
+                    </style>
+                    <div class="slideshow-container">
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">1 / 3</div>
+                      <img src="./assets/img/img1.jpg" style="width:100%">
+                      <div class="text">Caption Text</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">2 / 3</div>
+                      <img src="./assets/img/img2.jpg" style="width:100%">
+                      <div class="text">Caption Two</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">3 / 3</div>
+                      <img src="./assets/img/img1.jpg" style="width:100%">
+                      <div class="text">Caption Three</div>
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    
+                    </div>
+                    <br>
+                    
+                    <div style="text-align:center">
+                      <span class="dot" onclick="currentSlide(1)"></span> 
+                      <span class="dot" onclick="currentSlide(2)"></span> 
+                      <span class="dot" onclick="currentSlide(3)"></span> 
+                    </div>
+                    
+                    <script>
+                    var slideIndex = 1;
+                    showSlides(slideIndex);
+                    
+                    function plusSlides(n) {
+                      showSlides(slideIndex += n);
+                    }
+                    
+                    function currentSlide(n) {
+                      showSlides(slideIndex = n);
+                    }
+                    
+                    function showSlides(n) {
+                      var i;
+                      var slides = document.getElementsByClassName("mySlides");
+                      var dots = document.getElementsByClassName("dot");
+                      if (n > slides.length) {slideIndex = 1}    
+                      if (n < 1) {slideIndex = slides.length}
+                      for (i = 0; i < slides.length; i++) {
+                          slides[i].style.display = "none";  
+                      }
+                      for (i = 0; i < dots.length; i++) {
+                          dots[i].className = dots[i].className.replace(" active", "");
+                      }
+                      slides[slideIndex-1].style.display = "block";  
+                      dots[slideIndex-1].className += " active";
+                    }
+                  </script>
+                    </div>
+                    <div class="clear"></div>
+                    <div id="block1">
+                      <div class="main-content">
+                        <div id="content--about" class="space">
+                        <div class="content--title">
+                          <div class="main--title"><h1 id="about">Giới thiệu</h1></div>
+                          <div class="sub--title"><h2>Đội bóng được thành lập một cách không tưởng</h2></div>
+                        </div>
+                        <div class="content--about--para">
+                          <p>BBQ là từ viết tắt của Barbecue, phiên âm trong tiếng Việt là “ba-bê-kiu”
+                            . Đây là từ được dùng để chỉ hình thức nướng thịt trực tiếp trên bếp sau đó cùng nhau thưởng thức.
+                            Đúng như cái tên của nó đội bóng này được thành lập bởi những thành viên ăn hành rất nhiều trong team và mọi người  
+                            quyết định thành lập đội bóng riêng cho đội hình phụ. Đội bóng lúc đầu chỉ có những thành viên trong đội hình phụ nhưng giờ đây đã có những cầu thủ rất tốt và kĩ năng. Và là nhà tổ chức của nhiều giải đấu.</p>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      <div id="block2">
+                        <div class="main-content">
+                          <div id="content--member" class="space color-white">
+                            <div class="content--title">
+                              <div class="main--title"><h1 id="member">Thành viên</h1></div>
+                              <div class="sub--title"><h2>Các thành viên hiện có trong đội bóng</h2></div>
+                            </div>
+                          </div>
+                        <div class="content--member--info">
+                          <div class="container">
+                            <img src="./assets/img/thanhkhuong.jpg" alt="Avatar" class="image">
+                            <div class="overlay">Huỳnh Thanh Khương <br>ĐH: Sư phạm TPHCM</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/anhdo.jpg" alt="Avatar" class="image">
+                            <div class="overlay">Long Nguyễn ( anh đỏ ) <br> Làm ở ?</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/ducthanh.jpg" alt="Avatar" class="image">
+                            <div class="overlay">Đức Thành <br>ĐH: HUFLIT</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/binhchao.jpg" alt="Avatar" class="image">
+                            <div class="overlay">Thanh Bình ( Bình cháo )<br>ĐH: UIH</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/laihung.jpg" alt="Avatar" class="image">
+                            <div class="overlay">Lại Thanh Hưng ( Lụi )<br>ĐH: UIH</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/philong.jpg" alt="Avatar" class="image">
+                            <div class="overlay">Phi Long <br>Trường gì ta ?</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/thanhphu.jpg" alt="Avatar" class="image">
+                            <div class="overlay">Huỳnh Thanh Phú<br>ĐH: Văn Lang</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/thanhphuc.jpg" alt="Avatar" class="image">
+                            <div class="overlay">Trần Đặng Thanh Phúc<br>ĐH: Văn Hóa TPHCM</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/unknown.png" alt="Avatar" class="image">
+                            <div class="overlay">Liên hệ admin để thêm vào đội</div>
+                          </div>
+                         <!-- <div class="container">
+                            <img src="./assets/img/img_avatar.png" alt="Avatar" class="image">
+                            <div class="overlay">My Name is John</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/img_avatar.png" alt="Avatar" class="image">
+                            <div class="overlay">My Name is John</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/img_avatar.png" alt="Avatar" class="image">
+                            <div class="overlay">My Name is John</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/img_avatar.png" alt="Avatar" class="image">
+                            <div class="overlay">My Name is John</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/img_avatar.png" alt="Avatar" class="image">
+                            <div class="overlay">My Name is John</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/img_avatar.png" alt="Avatar" class="image">
+                            <div class="overlay">My Name is John</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/img_avatar.png" alt="Avatar" class="image">
+                            <div class="overlay">My Name is John</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/img_avatar.png" alt="Avatar" class="image">
+                            <div class="overlay">My Name is John</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/img_avatar.png" alt="Avatar" class="image">
+                            <div class="overlay">My Name is John</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/img_avatar.png" alt="Avatar" class="image">
+                            <div class="overlay">My Name is John</div>
+                          </div>
+                          <div class="container">
+                            <img src="./assets/img/img_avatar.png" alt="Avatar" class="image">
+                            <div class="overlay">My Name is John</div>
+                          </div> -->
+                        </div>
+                        </div>
+                      </div>
+                      <div id="block3" class="space">
+                        <div class="main-content">
+                        <div id="content--contact">
+                          <div class="content--title">
+                            <div class="main--title"><h1 id="contact">Contact</h1></div>
+                            <div class="sub--title"><h2>Liên lạc bằng email hoặc số điện thoại</h2></div>
+                          </div>
+                          <div class="content--contact--main">
+                            <div class="content--contact--author">
+                              <div class="contact--main--mail">
+                                <h3><a class="ti-email  author-icon"></a>Mail: bbqfootballteam@gmail.com</h3>
+                              </div>
+                                <div class="contact--main--phone">
+                                <h3><a class="ti-mobile author-icon"></a>Phone: 9788988788</h3>
+                                </div>
+                                <div class="contact--main--locate">
+                                  <h3><a class="ti-location-pin author-icon"></a>Address: Tan Phu, TPHCM</h3>
+                                </div>
+                            </div>
+                              <div class="content--contact--user">
+                                <div class="input-user-mail">
+                                  <input type="text" placeholder="Name" class="form-control">
+                                  <input type="Email" placeholder="Email" class="form-control" style="margin-right: -8px;">
+                                </div>
+                                <input type="number" placeholder="Phone" class="form-control-phone">
+                                <div class="submit">
+                                  <input onclick="myFunction()" type="submit" value="SEND" class="form-submit color-white">
+                                  <div id="snackbar">Yêu cầu đã được gửi.</div>
+                                  <script>
+                                    function myFunction() {
+                                      // Get the snackbar DIV
+                                         var x = document.getElementById("snackbar");
+
+                                                // Add the "show" class to DIV
+                                              x.className = "show";
+
+                                          // After 3 seconds, remove the show class from DIV
+                                          setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+                                                }
+                                  </script>
+                                </div>
+                              </div>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="block4">
+                       <div class="training-place">
+                        <div class="content--title">
+                          <div class="main--title color-white"><h1 id="train-place">Traing Place</h1></div>
+                          <div class="sub--title color-white"><h2>Các sân bóng được đội chọn luyện tập</h2></div>
+                        </div>
+                       </div>
+                       <style>
+                        * {
+                          box-sizing: border-box;
+                        }
+                        
+                        .column {
+                          float: left;
+                          width: 33.33%;
+                          padding: 5px;
+                        }
+                        
+                        /* Clearfix (clear floats) */
+                        .row::after {
+                          content: "";
+                          clear: both;
+                          display: table;
+                        }
+                        </style>                     
+                        <div class="row">
+                          <div class="column">
+                            <img src="./assets/img/trainplace1.jpg" alt="Snow" style="width:100%; max-height: 80%;">
+                          </div>
+                          <div class="column">
+                            <img src="./assets/img/trainplace2.jpg" alt="Forest" style="width:100%; max-height: 80%">
+                          </div>
+                          <div class="column">
+                            <img src="./assets/img/trainplace3.jpg" alt="Mountains" style="width:100%; max-height: 80%">
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+            <div class="footer" id="coppyright">
+              <div class="infomation">
+                <p>Coppyright: <a href="https://www.facebook.com/1022588S88563" style="">loctodale</a></p>
+                <p>Hỗ trợ</p>
+                <div class="footer--icon">
+                  <a href="https://www.facebook.com/khuong.thanh.902"><i class="ti-facebook"></i></a>
+                  <a href="https://www.facebook.com/profile.php?id=100069123265780"><i class="ti-facebook"></i></a>
+              </div>
+            </div>
+            <div class="footer--logo">
+                <style>
+                .logo-img:hover {
+                  animation: shake 0.5s;
+                  animation-iteration-count: infinite;
+                }
+                
+                @keyframes shake {
+                  0% { transform: translate(1px, 1px) rotate(0deg); }
+                  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+                  20% { transform: translate(-3px, 0px) rotate(1deg); }
+                  30% { transform: translate(3px, 2px) rotate(0deg); }
+                  40% { transform: translate(1px, -1px) rotate(1deg); }
+                  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+                  60% { transform: translate(-3px, 1px) rotate(0deg); }
+                  70% { transform: translate(3px, 1px) rotate(-1deg); }
+                  80% { transform: translate(-1px, -1px) rotate(1deg); }
+                  90% { transform: translate(1px, 2px) rotate(0deg); }
+                  100% { transform: translate(1px, -2px) rotate(-1deg); }
+                }
+                </style>
+                </div>
+                <img src="./assets/img/logo.png" class="logo-img" alt="BBQ-Logo" width="100" height="100">
+              </div>
+    </body>
+</html>
