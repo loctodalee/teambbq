@@ -7,9 +7,11 @@
 html{
     font-family:Helvetica,Arial, sans-serif;
     scroll-behavior: smooth;
+    background: url("../img/fullbackground.jpg") fixed;
+    color: white;
+    
 }
 .space{
-    padding-top: 32px;
     margin-top:32px;
     padding-bottom:64px;
 }
@@ -102,21 +104,53 @@ html{
     cursor: pointer;
 }
 body {
-
+    
+    
+}
+#content--about{
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.5);
+    margin-top: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.content--about--para{
+    padding:0px 16px;
 }
  #content {
     margin-top:46px;
     width:100%;
 }
 .main-content{
-    padding: 0% 5%;
+    margin: 5% 5%;
     text-align: justify;
     line-height: 1.6;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.5);
+    margin-top: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+    
 }
 
 .content--title {
     text-align: center;
+    margin-top:36px;
     font-size: 12px;
+    background: rgba(25,6,6,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+    margin-top: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .main--title h1 {
     font-weight: 200;
@@ -128,9 +162,8 @@ body {
     font-style: italic;
 }
 #block2{
-    background-color:black;
     padding-bottom: 64px;
-    height:100%
+    height:100%;
     
 }
 .content--member--info{
@@ -144,8 +177,15 @@ body {
                                 position: relative;
                                 width: 33.3333%;
                                 max-width: 300px;
-                                padding-top:24px;
-                                
+                                margin-top:24px;
+                                background: rgba(25,6,6,0.05);
+                                backdrop-filter: blur(10px);
+                                border-top: 1px solid rgba(255,255,255,0.2);
+                                border-left: 1px solid rgba(255,255,255,0.2);
+                                box-shadow: 5px 5px 30px rgb(0 0 0 / 10%);
+                                margin-bottom:30px;
+                               border-radius:10%;
+                               overflow: hidden;
                                 
                               }
                               
@@ -170,10 +210,16 @@ body {
                                 font-size: 20px;
                                 padding: 20px;
                                 text-align: center;
+                                
+                                
                               }
-                              
+                             
                               .container:hover .overlay {
                                 opacity: 1;
+                            }
+                            .container:hover{
+                                padding:1px;
+                                overflow:hidden;
                             }
 #block3{
     padding: 46px 0px;
@@ -182,6 +228,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0px 24px;
 }
 .author-icon{
     padding-right: 16px;
@@ -226,13 +273,19 @@ body {
 }
 /* ------------------------------- Map ---------------------*/
 #block4{
-    background-color: black;
-    padding: 46px 0px 82px 0;
+    margin: 10% 5%;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.5);
+    margin-top: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+
 }
 .footer{
     text-align: center;
-    padding: 32px 0px;
-    background:whitesmoke;
 }
 .footer--logo{
     
@@ -249,10 +302,22 @@ body {
     
   /*   text-shadow:0 0 10px rgba(0,0,0,0.3)*/
 }
-.footer p, .footer i{
+.footer p {
     font-size: 24px;
     font-weight: 500;
     padding: 8px 16px;
+}
+.footer i {
+    font: size 24oxp;
+    font-weight:500;
+    padding: 10px;
+    margin: 5px;
+    color:white;
+    background-color: rgb(139, 139, 139);
+    border-radius: 50%;
+}
+.footer--icon{
+    margin: 15px 0px
 }
 
 
@@ -553,5 +618,11 @@ body {
     }
     .form-control{
         width: 100%;
+    }
+    .content--contact--author h3{
+        font-size: 15px;
+    }
+    .content--contact--user{
+        margin-right: 12px
     }
 }
