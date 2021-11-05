@@ -153,7 +153,7 @@
                       font-size: 15px;
                       padding: 8px 12px;
                       position: absolute;
-                      bottom: 8px;
+                      bottom: 30px;
                       width: 100%;
                       text-align: center;
                     }
@@ -209,34 +209,48 @@
                     <div class="slideshow-container">
                     
                     <div class="mySlides fade">
-                      <div class="numbertext">1 / 3</div>
-                      <img src="./assets/img/img1.jpg" style="width:100%">
-                      <div class="text">Caption Text</div>
+                      <div class="numbertext"></div>
+                      <img src="./assets/img/img8.png" style="width:100%">
+                      <div class="text">I love football</div>
                     </div>
                     
                     <div class="mySlides fade">
-                      <div class="numbertext">2 / 3</div>
-                      <img src="./assets/img/img2.jpg" style="width:100%">
-                      <div class="text">Caption Two</div>
+                      <div class="numbertext"></div>
+                      <img src="./assets/img/img9.jpg" style="width:100%">
+                      <div class="text">You love football</div>
                     </div>
                     
                     <div class="mySlides fade">
-                      <div class="numbertext">3 / 3</div>
-                      <img src="./assets/img/img1.jpg" style="width:100%">
-                      <div class="text">Caption Three</div>
+                      <div class="numbertext"></div>
+                      <img src="./assets/img/img10.jpg" style="width:100%">
+                      <div class="text">We are love football</div>
                     </div>
                     
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     
-                    </div>
-                    <br>
-                    
-                    <div style="text-align:center">
+                    <div class="dot-btn">
                       <span class="dot" onclick="currentSlide(1)"></span> 
                       <span class="dot" onclick="currentSlide(2)"></span> 
                       <span class="dot" onclick="currentSlide(3)"></span> 
                     </div>
+                    <style>
+                      .dot-btn{
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        text-align: center;
+                      }
+                      .text{
+                        font-size: 16px;
+                        text-transform: uppercase;
+                        text-shadow: 2px 2px 2px rgb(165, 159, 159)                       
+                      }
+                    </style>
+                    </div>
+                    
+                    
                     
                     <script>
                     var slideIndex = 1;
@@ -270,7 +284,7 @@
                     <div class="clear"></div>
                     <div id="block1" style="margin-top:64px;">
                       <div class="main-content">
-                        <div id="content--about" class="space">
+                        <div id="content--about" >
                         <div class="content--title">
                           <div class="main--title"><h1 id="about">Giới thiệu</h1></div>
                           <div class="sub--title"><h2>Đội bóng được thành lập một cách không tưởng</h2></div>
@@ -329,6 +343,7 @@
                             <img src="./assets/img/unknown.png" alt="Avatar" class="image">
                             <div class="overlay">Liên hệ admin để thêm vào đội</div>
                           </div>
+                          <script src="./assets/js/main.js"></script>
                          <!-- <div class="container">
                             <img src="./assets/img/img_avatar.png" alt="Avatar" class="image">
                             <div class="overlay">My Name is John</div>
@@ -400,7 +415,7 @@
                                   <input type="text" placeholder="Name" class="form-control">
                                   <input type="Email" placeholder="Email" class="form-control" style="margin-right: -8px;">
                                 </div>
-                                <input type="number" placeholder="Phone" class="form-control-phone">
+                                <input type="tel" placeholder="Phone" class="form-control-phone">
                                 <div class="submit">
                                   <input onclick="myFunction()" type="submit" value="SEND" class="form-submit color-white">
                                   <div id="snackbar">Yêu cầu đã được gửi.</div>
@@ -425,8 +440,8 @@
                       <div id="block4">
                        <div class="training-place">
                         <div class="content--title">
-                          <div class="main--title color-white"><h1 id="train-place">Traing Place</h1></div>
-                          <div class="sub--title color-white"><h2>Các sân bóng được đội chọn luyện tập</h2></div>
+                          <div class="main--title"><h1 id="train-place">Traing Place</h1></div>
+                          <div class="sub--title"><h2>Các sân bóng được đội chọn luyện tập</h2></div>
                         </div>
                        </div>
                        <style>

@@ -7,9 +7,8 @@
 html{
     font-family:Helvetica,Arial, sans-serif;
     scroll-behavior: smooth;
-    background: url("../img/fullbackground.jpg") fixed;
-    color: white;
     
+        
 }
 .space{
     margin-top:32px;
@@ -104,18 +103,11 @@ html{
     cursor: pointer;
 }
 body {
-    
+    background: url("../img/footballgrass.jpg")
     
 }
 #content--about{
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-left: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.5);
-    margin-top: 0px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  padding-bottom: 32px;
 }
 .content--about--para{
     padding:0px 16px;
@@ -128,32 +120,28 @@ body {
     margin: 5% 5%;
     text-align: justify;
     line-height: 1.6;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-left: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.5);
-    margin-top: 0px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+    background: rgba(255, 255, 255, 0.25);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
     
 }
 
 .content--title {
     text-align: center;
-    margin-top:36px;
+    padding: 16px 0px;
+    margin-bottom: 32px;
     font-size: 12px;
-    background: rgba(25,6,6,0.05);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-left: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
-    margin-top: 0px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+    color:black;
+    background: rgba( 74, 74, 74, 0.1 )
+  
 }
 .main--title h1 {
     font-weight: 200;
+    
 }
 .sub--title {
     opacity: 0.3;
@@ -216,9 +204,10 @@ body {
                              
                               .container:hover .overlay {
                                 opacity: 1;
+                                overflow: hidden;
                             }
                             .container:hover{
-                                padding:1px;
+                                
                                 overflow:hidden;
                             }
 #block3{
@@ -229,6 +218,9 @@ body {
     flex-direction: row;
     justify-content: space-between;
     padding: 0px 24px;
+}
+#content--contact{
+    padding-bottom: 32px;
 }
 .author-icon{
     padding-right: 16px;
@@ -274,18 +266,18 @@ body {
 /* ------------------------------- Map ---------------------*/
 #block4{
     margin: 10% 5%;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-left: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.5);
-    margin-top: 0px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
 }
 .footer{
     text-align: center;
+    background:rgb(43, 43, 43);
+    color: white
 }
 .footer--logo{
     
@@ -298,7 +290,7 @@ body {
 }
 .footer a{
     text-decoration: none;
-    color:black;
+    color: white
     
   /*   text-shadow:0 0 10px rgba(0,0,0,0.3)*/
 }
@@ -306,6 +298,7 @@ body {
     font-size: 24px;
     font-weight: 500;
     padding: 8px 16px;
+    color: white;
 }
 .footer i {
     font: size 24oxp;
